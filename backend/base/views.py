@@ -15,7 +15,6 @@ from django.http import JsonResponse
 @api_view(["GET"])
 def get_files(request):
     files = Files.objects.all()
-    # files = ['asdf','asdf']
     serializer = FileSerializer(files, many=True)
-    return Response(files)
+    return Response(serializer.data)
 

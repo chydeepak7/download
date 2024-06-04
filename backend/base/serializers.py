@@ -5,9 +5,11 @@ from .models import *
 
 
 class FileSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Files
-        fields = ['user', 
-                  'created_at']
+        fields = '__all__'
+    
+    
 
 

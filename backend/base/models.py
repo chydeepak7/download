@@ -15,6 +15,7 @@ def validate_file_size(value):
 class Files(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     file_name = models.FileField(validators=[validate_file_size])
+   
     # file_name = models.ForeignKey(File, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     _id = models.AutoField(editable=False,primary_key=True)
