@@ -1,6 +1,5 @@
 import { BrowserRouter as Router,Route, Routes } from 'react-router-dom'
-import Upload from './components/Upload';
-import Header from './components/Header';
+import FileList from './components/FileList';
 import Homescreen from './screens/Homescreen'
 
 function App() {
@@ -9,6 +8,7 @@ function App() {
       <Router>
         <Routes>
         <Route path='/' Component={Homescreen} exact />
+        <Route path='/files' Component={FileList} />
 
         </Routes>
       </Router>

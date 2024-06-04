@@ -2,7 +2,7 @@ import React from 'react'
 
 function Upload() {
   return (
-    <div class="container positioning">
+    <div className="container positioning">
         <h1>Upload Folder</h1>
         <h1>Heading</h1>
         <input type="email" placeholder="Email to" />
