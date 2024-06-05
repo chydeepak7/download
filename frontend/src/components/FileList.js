@@ -24,19 +24,25 @@ function FileList() {
 
   useEffect(() => {
     dispatch(listFiles());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <div className="container">
-        <div className="row flex">
-          {files.map((file) => (
-            <div className="col-md-3 col-xl-8" style={style2} key={file._id}>
-              <a href="/files" style={style}>
-                {file.file_name.slice(7)}
-              </a>
-            </div>
-          ))}
+        {loading ? <h2>Loading...</h2>
+        : error ? <h3>{error}</h3>
+      :
+      <div className="row flex">
+      {files.map((file) => (
+        <div className="col-md-3 col-xl-8" style={style2} key={file._id}>
+          <a href="/files" style={style}>
+            {file.file_name.slice(7)}
+          </a>
         </div>
+      ))}
+      
+        </div>
+      }
+          
       </div>
     </div>
   );
