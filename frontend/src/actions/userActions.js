@@ -7,6 +7,7 @@ import {
   USER_REGISTER_SUCCESS,
   USER_REGISTER_FAIL,
 } from "../constants/userConstants";
+import { FILE_LIST_MY_RESET } from '../constants/fileConstants'
 import axios from "axios";
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -46,6 +47,7 @@ localStorage.setItem('userInfo', JSON.stringify(data))
 export const logout = () => (dispatch) => {
   localStorage.removeItem('userInfo')
   dispatch({type:USER_LOGOUT})
+  dispatch({type:FILE_LIST_MY_RESET})
 }
 
 

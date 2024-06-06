@@ -73,3 +73,12 @@ def registerUser(request):
     except:
         message = {'detail': 'User with this email already exists'}
         return Response(message, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getMyFiles(request):
+    user = request.user
+    files = user.files_set.all()
+    serializer = FileSerializer(files, many=True)
+    return Response(serializer.data)
+

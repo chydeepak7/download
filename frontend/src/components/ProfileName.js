@@ -15,8 +15,8 @@ function ProfileName() {
         {userInfo ? (
             <NavDropdown title={userInfo.name} className='profile'>
 
-            <LinkContainer to='/profile' >
-                <NavDropdown.Item ><div className='profile_style'>Profile</div></NavDropdown.Item>
+            <LinkContainer to='/files' >
+                <NavDropdown.Item ><div className='profile_style'>Files</div></NavDropdown.Item>
                    
             </LinkContainer>
                 <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
