@@ -45,6 +45,7 @@ export const listMyFiles = () => async (dispatch, getState) => {
       type: FILE_LIST_MY_SUCCESS,
       payload: data,
     });
+    localStorage.setItem("fileListMy", JSON.stringify(data));//added later to check
   } catch (error) {
     dispatch({
       type: FILE_LIST_MY_FAIL,
